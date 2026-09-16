@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CLAUDE_SPINNER_VERBS, randomClaudeVerb, type ClaudeSpinnerVerb } from "./verbs";
 
-export interface ClaudeLoaderProps {
+export interface VerbSpinnerProps {
   /** Pin a specific verb instead of picking one randomly. */
   verb?: ClaudeSpinnerVerb;
   /** Milliseconds between picking a new random verb. Omit to pick once and hold. */
@@ -49,15 +49,15 @@ function injectStyles() {
   if (stylesInjected || typeof document === "undefined") return;
   stylesInjected = true;
   const style = document.createElement("style");
-  style.setAttribute("data-claude-loader", "");
+  style.setAttribute("data-verb-spinner", "");
   style.textContent = `
-    .claude-loader {
+    .verb-spinner {
       display: inline-flex;
       align-items: center;
       gap: 0.5em;
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     }
-    .claude-loader__spinner {
+    .verb-spinner__spinner {
       display: inline-block;
       width: 1em;
       text-align: center;
@@ -70,7 +70,7 @@ function injectStyles() {
  * A loading indicator styled after Claude Code's CLI spinner: a braille
  * spinner paired with a randomly chosen whimsical verb (e.g. "Marinating…").
  */
-export function ClaudeLoader({
+export function VerbSpinner({
   verb,
   cycleMs,
   size = 16,
@@ -80,7 +80,7 @@ export function ClaudeLoader({
   spinner,
   className,
   style,
-}: ClaudeLoaderProps) {
+}: VerbSpinnerProps) {
   useEffect(() => {
     injectStyles();
   }, []);
@@ -106,13 +106,13 @@ export function ClaudeLoader({
 
   return (
     <span
-      className={["claude-loader", className].filter(Boolean).join(" ")}
+      className={["verb-spinner", className].filter(Boolean).join(" ")}
       style={{ fontSize: size, color: resolvedColor, ...style }}
       role="status"
       aria-live="polite"
       aria-label={`${displayVerb}${suffix}`}
     >
-      <span className="claude-loader__spinner" aria-hidden="true">
+      <span className="verb-spinner__spinner" aria-hidden="true">
         {spinner ?? FRAMES[frame]}
       </span>
       <span>
@@ -125,4 +125,4 @@ export function ClaudeLoader({
 
 export { CLAUDE_SPINNER_VERBS, randomClaudeVerb };
 export type { ClaudeSpinnerVerb };
-export default ClaudeLoader;
+export default VerbSpinner;

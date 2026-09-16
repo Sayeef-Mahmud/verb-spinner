@@ -5,7 +5,7 @@ list of 185 status words (`Marinating`, `Noodling`, `Combobulating`,
 `Flibbertigibbeting`, ...), extracted directly from the `claude.exe` v2.1.273
 binary. No CSS framework required — styles are injected inline at runtime.
 
-![Four ClaudeLoader variations spinning: default, a larger pinned verb, a custom color and suffix, and a custom Iconify spinner](https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/variants.gif)
+![Four VerbSpinner variations spinning: default, a larger pinned verb, a custom color and suffix, and a custom Iconify spinner](https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/variants.gif)
 
 Left to right: default, `size={22} verb="Marinating"`, `color="#0d7a6c" suffix=":"`,
 and `spinner={<Icon icon="svg-spinners:180-ring" />}`.
@@ -13,10 +13,10 @@ and `spinner={<Icon icon="svg-spinners:180-ring" />}`.
 ## Usage
 
 ```tsx
-import { ClaudeLoader } from "@sayeef-mahmud/verb-spinner";
+import { VerbSpinner } from "@sayeef-mahmud/verb-spinner";
 
 function App() {
-  return <ClaudeLoader />;
+  return <VerbSpinner />;
 }
 ```
 
@@ -39,24 +39,24 @@ behaves — one verb per turn, not a cycling ticker).
 
 ### Cycling verbs
 
-![ClaudeLoader with cycleMs set, re-picking a random verb every 900ms](https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/verbcycle.gif)
+![VerbSpinner with cycleMs set, re-picking a random verb every 900ms](https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/verbcycle.gif)
 
 ```tsx
-<ClaudeLoader cycleMs={900} size={26} />
+<VerbSpinner cycleMs={900} size={26} />
 ```
 
 ### Auto-contrast against a changing background
 
-![Two ClaudeLoaders, one on a light card and one on a dark card, both with legible auto-contrast text](https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/contrast.gif)
+![Two VerbSpinners, one on a light card and one on a dark card, both with legible auto-contrast text](https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/contrast.gif)
 
 ```tsx
-<ClaudeLoader background={bgColor} />
+<VerbSpinner background={bgColor} />
 ```
 
 ### Custom spinner
 
 ```tsx
-<ClaudeLoader spinner={<MySpinnerIcon />} />
+<VerbSpinner spinner={<MySpinnerIcon />} />
 ```
 
 The `spinner` prop fully replaces the default braille animation — animate your
@@ -66,7 +66,7 @@ Iconify example in the GIF above:
 ```tsx
 import { Icon } from "@iconify/react";
 
-<ClaudeLoader spinner={<Icon icon="svg-spinners:180-ring" />} />
+<VerbSpinner spinner={<Icon icon="svg-spinners:180-ring" />} />
 ```
 
 You can also use the auto-contrast helper directly:

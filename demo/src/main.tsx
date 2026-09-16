@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Icon } from "@iconify/react";
-import { ClaudeLoader } from "../../src/ClaudeLoader";
+import { VerbSpinner } from "../../src/VerbSpinner";
 
 const BACKGROUNDS = ["#ffffff", "#0d1117", "#1e3a8a", "#7c2d12", "#14532d", "#581c87"];
 
@@ -37,9 +37,9 @@ function App() {
         Cycle background
       </button>
 
-      <ClaudeLoader size={24} background={BACKGROUNDS[bgIndex]} />
+      <VerbSpinner size={24} background={BACKGROUNDS[bgIndex]} />
 
-      <ClaudeLoader
+      <VerbSpinner
         size={24}
         background={BACKGROUNDS[bgIndex]}
         spinner={<Icon icon="svg-spinners:180-ring" />}

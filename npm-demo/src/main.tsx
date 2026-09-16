@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { ClaudeLoader } from "@sayeef-mahmud/verb-spinner";
+import { VerbSpinner } from "@sayeef-mahmud/verb-spinner";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         width: "100vw",
       }}
     >
-      <ClaudeLoader size={24} />
+      <VerbSpinner size={24} />
     </div>
   );
 }
