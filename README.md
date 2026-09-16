@@ -5,6 +5,16 @@ list of 185 status words (`Marinating`, `Noodling`, `Combobulating`,
 `Flibbertigibbeting`, ...), extracted directly from the `claude.exe` v2.1.273
 binary. No CSS framework required — styles are injected inline at runtime.
 
+<p>
+  <img src="https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/demo-light.png" width="49%" alt="Loader on a light background, auto-contrast text" />
+  <img src="https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/demo-dark.png" width="49%" alt="Loader on a dark background, auto-contrast text" />
+</p>
+
+Top: default braille spinner. Bottom: same component with a custom
+`spinner={<Icon icon="svg-spinners:180-ring" />}` from `@iconify/react`. Both
+flip between black and white text automatically via the `background` prop as
+the page behind them changes.
+
 ## Usage
 
 ```tsx
