@@ -1,0 +1,31 @@
+{
+  "name": "@sayeef-mahmud/verb-spinner",
+  "version": "0.1.0",
+  "description": "A loading spinner paired with 185 whimsical status verbs (Marinating, Noodling, Combobulating, ...).",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sayeef-Mahmud/verb-spinner.git"
+  },
+  "homepage": "https://github.com/Sayeef-Mahmud/verb-spinner#readme",
+  "bugs": {
+    "url": "https://github.com/Sayeef-Mahmud/verb-spinner/issues"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=17"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}
