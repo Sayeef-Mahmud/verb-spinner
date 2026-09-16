@@ -5,15 +5,10 @@ list of 185 status words (`Marinating`, `Noodling`, `Combobulating`,
 `Flibbertigibbeting`, ...), extracted directly from the `claude.exe` v2.1.273
 binary. No CSS framework required — styles are injected inline at runtime.
 
-<p>
-  <img src="https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/demo-light.png" width="49%" alt="Loader on a light background, auto-contrast text" />
-  <img src="https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/demo-dark.png" width="49%" alt="Loader on a dark background, auto-contrast text" />
-</p>
+![Four ClaudeLoader variations spinning: default, a larger pinned verb, a custom color and suffix, and a custom Iconify spinner](https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/variants.gif)
 
-Top: default braille spinner. Bottom: same component with a custom
-`spinner={<Icon icon="svg-spinners:180-ring" />}` from `@iconify/react`. Both
-flip between black and white text automatically via the `background` prop as
-the page behind them changes.
+Left to right: default, `size={22} verb="Marinating"`, `color="#0d7a6c" suffix=":"`,
+and `spinner={<Icon icon="svg-spinners:180-ring" />}`.
 
 ## Usage
 
@@ -42,13 +37,17 @@ behaves — one verb per turn, not a cycling ticker).
 | `className`  | `string`              | -                | Extra class on the wrapping `<span>`.                        |
 | `style`      | `React.CSSProperties` | -                | Extra inline styles on the wrapping `<span>`.                |
 
-### Cycling example
+### Cycling verbs
+
+![ClaudeLoader with cycleMs set, re-picking a random verb every 900ms](https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/verbcycle.gif)
 
 ```tsx
-<ClaudeLoader cycleMs={2000} size={20} color="#d97757" />
+<ClaudeLoader cycleMs={900} size={26} />
 ```
 
 ### Auto-contrast against a changing background
+
+![Two ClaudeLoaders, one on a light card and one on a dark card, both with legible auto-contrast text](https://raw.githubusercontent.com/Sayeef-Mahmud/verb-spinner/main/docs/contrast.gif)
 
 ```tsx
 <ClaudeLoader background={bgColor} />
@@ -61,7 +60,14 @@ behaves — one verb per turn, not a cycling ticker).
 ```
 
 The `spinner` prop fully replaces the default braille animation — animate your
-own element however you like (CSS keyframes, a GIF, an SVG loop, etc).
+own element however you like (CSS keyframes, a GIF, an SVG loop, etc). See the
+Iconify example in the GIF above:
+
+```tsx
+import { Icon } from "@iconify/react";
+
+<ClaudeLoader spinner={<Icon icon="svg-spinners:180-ring" />} />
+```
 
 You can also use the auto-contrast helper directly:
 

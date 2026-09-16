@@ -1,6 +1,6 @@
 {
   "name": "@sayeef-mahmud/verb-spinner",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A loading spinner paired with 185 whimsical status verbs (Marinating, Noodling, Combobulating, ...).",
   "license": "MIT",
   "repository": {
